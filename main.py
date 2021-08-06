@@ -4,12 +4,27 @@ a = "The Persian League is the largest sport event dedicated to the deprived are
 "This video was captured by one of our heroes who wishes peace."
 a = a.split()
 b =dict(enumerate(a))
-print(b , len(a))
+
+pop_keys = []
+for i , j in b.items():
+    if j[-1]== '.':
+        if i == len(b)-1:
+            continue
+        else:
+            pop_keys.append(i+1)
+
+for i in pop_keys:
+    b.pop(i)
+
+
 for i , j in b.items():
     #print(j[0] , type(j))
     if j[0].isupper() == True:
-        j = j.replace('.','')
-        print(f'{i+1}:{j}')
+        if i==0:
+            continue
+        else:
+            j = j.replace('.','')
+            print(f'{i+1}:{j}')
 
 
 """
