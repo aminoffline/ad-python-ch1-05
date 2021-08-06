@@ -1,11 +1,23 @@
-a = input()
+
+
+a = "The Persian League is the largest sport event dedicated to the deprived areas of Iran. The Persian League promotes peace and friendship."\
+"This video was captured by one of our heroes who wishes peace."
 a = a.split()
-print(a , len(a))
+b =dict(enumerate(a))
+print(b , len(a))
+for i , j in b.items():
+    #print(j[0] , type(j))
+    if j[0].isupper() == True:
+        j = j.replace('.','')
+        print(f'{i+1}:{j}')
+
+
+"""
 out = []
 
 for i in a:
-    b = a[a.index(i)]
     c = a.index(i)
+    b = a[c]
     print(i , c+1  , b)
     if b[0][0].isupper()== True:
         if c == 0 :
@@ -18,10 +30,11 @@ for i in a:
 for i in out:
     print(i , end="\n")
 """
+"""
 for i in b[0]:
     
     if b[0][0].isupper() == True :
         print(b[0])
     else :
         print (None)
- """
+"""
